@@ -9,8 +9,6 @@ import { CountryListComponent } from "../../components/country-list/country-list
 })
 export class ByCapitalPageComponent {
 
-  onSearch(value:string){
-    console.log({value});
-  }
+
 
  }
