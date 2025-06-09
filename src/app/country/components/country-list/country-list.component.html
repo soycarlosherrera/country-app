@@ -33,10 +33,37 @@
           </td>
 
           <td>
-            <a class="link-primary cursor-pointer">Mâs informaciôn</a>
+            <a
+              [routerLink]="['/country/by',country.cca2]"
+              class="link-primary cursor-pointer">Mâs informaciôn</a>
           </td>
         </tr>
       }
+
+      @if (errorMessage()) {
+        <tr>
+          <td colspan="8" class="text-center">
+            {{ errorMessage() }}
+          </td>
+        </tr>
+      }
+
+      @if (countries().length === 0 && !isLoading()) {
+        <tr>
+          <td colspan="8" class="text-center">
+            No se encontraron resultados
+          </td>
+        </tr>
+      }
+
+      @if (isLoading()) {
+        <tr>
+          <td colspan="8" class="text-center">
+            Buscando paises...
+          </td>
+        </tr>
+      }
+
     </tbody>
   </table>
 </section>
